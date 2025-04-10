@@ -1,0 +1,277 @@
+/* Hapus definisi variabel CSS untuk dark mode */
+body {
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input,
+select {
+  border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Table hover effects with animation */
+tr {
+  transition: background-color 0.2s ease;
+}
+
+tr:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Button hover animations */
+button {
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive padding adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Enhanced Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Adjust chart size for tablets */
+  #financeChart {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack form and chart vertically */
+  .grid.grid-cols-1.lg\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Reduce form padding */
+  .bg-white.rounded-lg.shadow-md.p-6 {
+    padding: 1rem;
+  }
+  
+  /* Adjust table font size */
+  table {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Make table more compact */
+  .px-6 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .py-4 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Adjust button sizes */
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Hide some table columns on very small screens */
+  th:nth-child(3),
+  td:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Extreme mobile adjustments */
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  /* Single column form layout */
+  .space-y-4 > div {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Hide more table columns */
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: none;
+  }
+}
+
+/* Toast Animation */
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+#toast {
+  animation: slideIn 0.3s ease-out;
+}
+
+#toast.hidden {
+  animation: fadeOut 0.5s ease-out;
+}
+
+/* Form Validation */
+input:invalid, select:invalid {
+  border-color: #f87171 !important;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+
+/* Notification Styles */
+#formNotification {
+  transition: all 0.3s ease;
+}
+
+#formNotification.success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+#formNotification.error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+#formNotification.warning {
+  background-color: #fffbeb;
+  border: 1px solid #fef08a;
+  color: #92400e;
+}
+
+/* Add this to your existing responsive breakpoints */
+@media (max-width: 640px) {
+  .grid.grid-cols-1.md\:grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  #totalIncome, #totalExpense, #totalBalance {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-green-50, .bg-red-50, .bg-blue-50 {
+    padding: 0.75rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* Chart Container Styles */
+#financeChart {
+  width: 100% !important;
+  height: 300px !important;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  #financeChart {
+    height: 350px !important;
+  }
+}
+
+/* Chart Tooltip Styles */
+.chartjs-tooltip {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.chartjs-tooltip-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+/* Chart container styling */
+#financeChart {
+  transition: all 0.3s ease;
+}
+
+/* Tooltip styling */
+.chartjs-tooltip {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  padding: 8px 12px !important;
+  color: #1f2937 !important;
+}
